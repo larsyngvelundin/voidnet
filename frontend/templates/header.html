@@ -1,0 +1,36 @@
+{% block header %}
+<nav>
+    <ul class="nav-header">
+        <img class="nav-logo nav-logo-image" src="{{ url_for('static', filename='img/void.png') }}">
+        <li class="nav-logo nav-logo-text">Voidnet</li>
+        <li class="menu-item"><a href="/">Home</a></li>
+    </ul>
+</nav>
+<style>
+    .nav-header {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-header .menu-item {
+        display: inline-block;
+        /* flex: 1 0 auto; */
+        position: relative;
+        padding: 0 20px;
+    }
+
+    .nav-header li {
+        text-align: center;
+        margin: auto 0;
+    }
+
+    .nav-logo-text {
+        padding-left: 10px;
+    }
+
+    .nav-logo-image {
+        max-width: 28px;
+        max-height: 28px;
+    }
+</style>
+{% endblock %}

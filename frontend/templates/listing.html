@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>View Listing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/listing.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css') }}">
+    <script>
+        const listingId = {{ data.id }};
+        const apiBaseUrl = "{{ data.api_base }}";
+        const brokenImagePath = "{{ url_for('static', filename='img/notfound.svg') }}"
+    </script>
+
+</head>
+
+<body onload="loadListing()">
+    <header>
+        {% block header %}
+        {% include 'header.html' %}
+        {% endblock %}
+    </header>
+
+    <style type="text/css">
+
+    </style>
+    <table class="listing-table">
+        <thead>
+            <tr>
+                <td class="listing-images" colspan="7"></td>
+                <td class="listing-agent" rowspan="4">
+                    <table class="listing-agent-table">
+                        <thead>
+                            <tr>
+                                <td colspan="2">
+                                    <h2>Realtor Agent</h2>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h3 class="listing-agent-insert"></h3>
+                                </td>
+                                <td class="listing-agent-image" rowspan="2">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Realtor Company:</p>
+                                    <p class="listing-company-insert"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <a href="#" class="listing-email-button">Email <span
+                                            class="listing-agent-insert"></span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <a href="#">Other properties for sale by <span
+                                            class="listing-company-insert"></span></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="listing-name" colspan="5">
+                    <h1 class="listing-name-insert"></h1>
+                </td>
+                <td class="listing-price" rowspan="2"><span class="listing-price-insert"></span></td>
+            </tr>
+            <tr>
+                <td class="listing-location" colspan="5">
+                    <p class="listing-location-insert"></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="listing-description" colspan="4">
+                    <p class="listing-description-insert"></p>
+                </td>
+                <td class="listing-properties" colspan="2">
+                    <table class="listing-properties-table">
+                        <tbody>
+                            <tr class="listing-property-row">
+                                <td>
+                                    Status:
+                                </td>
+                                <td class="listing-status-insert">
+                                </td>
+                            </tr>
+                            <tr class="listing-property-row">
+                                <td>
+                                    Property Type:
+                                </td>
+                                <td class="listing-category-insert">
+                                </td>
+                            </tr>
+                            <tr class="listing-property-row">
+                                <td>
+                                    Rooms:
+                                </td>
+                                <td class="listing-rooms-insert">
+                                </td>
+                            </tr>
+                            <tr class="listing-property-row">
+                                <td>
+                                    Area:
+                                </td>
+                                <td class="listing-area-insert">
+                                </td>
+                            </tr>
+                            <tr class="listing-property-row">
+                                <td>
+                                    Floors:
+                                </td>
+                                <td class="listing-floors-insert">
+                                </td>
+                            </tr>
+                            <tr class="listing-property-row">
+                                <td>
+                                    Energy Class:
+                                </td>
+                                <td class="listing-energy-class-insert">
+                                </td>
+                            </tr>
+                            <tr class="listing-property-row">
+                                <td>
+                                    Upkeep:
+                                </td>
+                                <td class="listing-upkeep-insert">
+                                </td>
+                            </tr>
+                            <tr class="listing-property-row">
+                                <td>
+                                    Year:
+                                </td>
+                                <td class="listing-year-insert">
+                                </td>
+                            </tr>
+                            <tr class="listing-property-row">
+                                <td>
+                                    Entity:
+                                </td>
+                                <td class="listing-entity-insert">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </thead>
+    </table>
+    <div class="listing-div">
+        <h1 class="listing-h1"></h1>
+        <p class="listing-p"></p>
+    </div>
+    <script src="{{ url_for('static', filename='js/get_listing.js') }}"></script>
+
+
+    <footer>
+        {% block footer %}
+        {% include 'footer.html' %}
+        {% endblock %}
+    </footer>
+</body>
+
+</html>
