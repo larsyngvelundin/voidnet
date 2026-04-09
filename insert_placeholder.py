@@ -1,8 +1,8 @@
-import os
+# import os
 
-import psycopg2
-from db_setup import get_connection
-from fastapi import FastAPI, HTTPException
+# import psycopg2
+# from db_setup import get_connection
+# from fastapi import FastAPI, HTTPException
 from db import (
     create_agent_with_names,
     create_company,
@@ -12,14 +12,15 @@ from db import (
     create_user_image,
 )
 
-app = FastAPI()
+# app = FastAPI()
 
 
 def add_placeholders():
     """
     A function to generate placeholder data for testing purposes.
     """
-    con = get_connection()
+    # con = get_connection()
+    con = ""
 
     # USERS
     users = [
@@ -246,8 +247,8 @@ def add_placeholders():
             "display_name": "bralran",
         },
     ]
-    for user in users:
-        create_user(con, user)
+    # for user in users:
+    #     create_user(con, user)
 
     user_images = [
         {
@@ -356,7 +357,7 @@ def add_placeholders():
         },
         {
             "user_id": 27,
-            "image_path": "img/users/ur'guth.jpg",
+            "image_path": "img/users/urguth.jpg",
         },
         {
             "user_id": 28,
@@ -376,7 +377,7 @@ def add_placeholders():
         },
         {
             "user_id": 32,
-            "image_path": "img/users/rag'drezos.jpg",
+            "image_path": "img/users/ragdrezos.jpg",
         },
         {
             "user_id": 33,
@@ -400,8 +401,8 @@ def add_placeholders():
         },
     ]
 
-    for image in user_images:
-        create_user_image(con, image=image)
+    # for image in user_images:
+    #     create_user_image(con, image=image)
 
     companies = [
         {"company_name": "Gnome Inc."},
@@ -412,8 +413,8 @@ def add_placeholders():
         {"company_name": "друг компания"},
         {"company_name": "Boo"},
     ]
-    for company in companies:
-        create_company(con, company)
+    # for company in companies:
+    #     create_company(con, company)
 
     agents = [
         {"username": "the_adjuster", "company_name": "Gnome Inc."},
@@ -425,8 +426,8 @@ def add_placeholders():
         {"username": "drog", "company_name": "друг компания"},
         {"username": "saran", "company_name": "Boo"},
     ]
-    for agent in agents:
-        create_agent_with_names(con, agent)
+    # for agent in agents:
+    #     create_agent_with_names(con, agent)
 
     listings = [
         {  # Backrooms D
@@ -474,4 +475,4 @@ def add_placeholders():
 
 if __name__ == "__main__":
     add_placeholders()
-    print("Placeholders added successfully.")
+    # print("Placeholders added successfully.")
